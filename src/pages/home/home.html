@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Bookstore Library
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-list>
+    <ion-item *ngFor="let libro of libros">
+      <ion-avatar item-start>
+        <img src={{libro.portada}}>
+      </ion-avatar>
+      <h2 (click)="viewFull(libro)">{{libro.titulo}}</h2>
+      <p>{{libro.autor.nombre}}</p>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
